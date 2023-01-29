@@ -53,10 +53,8 @@ function preload()
 {
     // preload the images and the font here from
     // the assets folder
-    donut = loadImage('assets/donut.png');
-    minion = loadImage('assets/minion.png');
-    fire = loadImage('assets/fire.png');
-    newFont = loadFont('assets/PottaOne-Regular.ttf');
+    donut = loadImage('images/donut.png');
+    newFont = loadFont('fonts/PottaOne-Regular.ttf');
 }
 // set up a random color initially
 function setup()
@@ -103,9 +101,7 @@ function draw()
 
     // added all my images after preloading them
     image(donut,donutX, donutY);
-    image(minion, minionX, minionY);
-    image(fire, fireX, fireY);
-
+  
     // change the donut along the horizontal axis
     donutX += donutSpeed;
     if(donutX >= width - donut.width || donutX  <= donut.width/8)
@@ -113,24 +109,7 @@ function draw()
         donutSpeed *= -1;
     }
 
-    // change the minion along the vertical axis
-    minionY += minionSpeed;
-    if(minionY >= height - minion.height || minionY  <= minion.height/8)
-    {
-        minionSpeed *= -1;
-    }
-
-    // change the fire along a diagonal axis
-    fireY += fireSpeed;
-    if(fireY >= height - fire.height || fireY  <= fire.height/8)
-    {
-        fireSpeed *= -1;
-    }
-    fireX += fireSpeed;
-    if(fireX >= width - fire.width || fireX  <= fire.width/8)
-    {
-        fireSpeed *= -1;
-    }
+    
     // upper border
     noStroke();
     fill(0,100,255);
