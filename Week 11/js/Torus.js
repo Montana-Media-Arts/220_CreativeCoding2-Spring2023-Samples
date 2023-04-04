@@ -1,8 +1,8 @@
 class Torus extends threedshape{
 
-    constructor(x, y, radius, tubeRadius)
+    constructor(x, y, speedX, speedY, radius, tubeRadius)
     {
-        super(x,y);
+        super(x,y, speedX, speedY);
         this.radius = radius;
         this.tubeRadius = tubeRadius;
 
@@ -12,8 +12,6 @@ class Torus extends threedshape{
     {
         push();
         super.moveShape();
-        rotateX(frameCount * .01);
-        rotateY(frameCount * .01);
         torus(this.radius, this.tubeRadius);
         pop();
     }

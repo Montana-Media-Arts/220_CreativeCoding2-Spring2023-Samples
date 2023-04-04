@@ -1,8 +1,8 @@
 class Box extends threedshape
 {
-    constructor(x, y, width, height)
+    constructor(x, y, speedX, speedY, width, height)
     {
-        super(x,y);
+        super(x,y, speedX, speedY);
         this.width = width;
         this.height = height;
 
@@ -12,8 +12,7 @@ class Box extends threedshape
     {
         push();
         super.moveShape();
-        rotateX(frameCount * .01);
-        rotateY(frameCount * .01);
+        
         box(this.width, this.height);
         pop();
     }
